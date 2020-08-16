@@ -1,0 +1,39 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
+ # elasticsearch:
+ #   jest:
+ #     uris: http://dock:9200
+ # data:
+ #   elasticsearch:
+ #     cluster-name: doelas-cluster
+ #     cluster-nodes: dock:9300
+  elasticsearch:
+    jest:
+      uris: http://dock:9200
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: dock:9300
+  datasource:
+    url: jdbc:sqlserver://PC201401120046:1433;DatabaseName=XrLearn
+    username: xiaoran1
+    password: 3333
+    #使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    open-in-view: false
+
+server:
+  #端口号
+  port: 8888
+netty:
+  host: 127.0.0.1
+  port: 7397
+
